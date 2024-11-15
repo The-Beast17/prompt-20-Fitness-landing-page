@@ -1,0 +1,232 @@
+
+/*****************************/
+
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+html , body{
+    width : 100%;
+    height : 100%; 
+   
+}
+
+body{
+    font-family:"Montserrat";
+}
+nav{
+    width :100%;
+    display: flex;
+    justify-content: space-around;
+    padding : 0 1vw;
+    align-items:center;
+    position: fixed;
+    top : 0;
+    left :0;
+    z-index:100;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+nav img{ 
+    width : 20vh;
+}
+
+nav .nav-middle{
+    display: flex;
+    gap : 5vw;
+}
+
+nav  a{
+    text-decoration: none;
+    font-size: 1.1vw;
+    font-weight: 500;
+    z-index: 2;
+    position:relative;
+    padding : 1vw 0;
+    color :rgb(255, 251, 251);
+}
+
+/******************************/
+
+nav .nav-middle a::before{
+    content: "";
+    height : 5%;
+    width : 0;
+    background-color: white;
+    position: absolute;
+    bottom : 0;
+    left : 0;
+    z-index:10;
+    transition : .25s all ease-in; 
+}
+
+nav .nav-middle a:hover::before{ 
+    width : 100%;
+}
+
+nav .register{
+    height : 3vw ;
+    width : 8vw;
+}
+nav button{
+    height: 100%;
+    width : 100%;
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    border : none;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 75% 100%, 0% 100%);
+}
+nav button:hover{
+    background-color: rgb(187, 205, 220);
+}
+
+/********************************/
+.page1 {
+   height : 100%;
+   width : 100%;
+   background-color: black;
+   position : relative;
+   overflow: hidden;
+}
+
+.page1 .cut{
+    position : absolute;
+    height : 100%;
+    width : 100%;
+    background-color: chartreuse;
+    clip-path: polygon(87% 0%, 100% 0% , 100% 100% , 50% 100%);
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+.page1 .content{
+    height : 100%;
+    width : 100%;
+    display: flex;
+    position : relative;
+}
+.page1 .left{
+    width : 60%;
+    height : 100%;
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap :2vw;
+    padding: 0  5vw;
+    color : white;
+}
+
+.page1 .left h1:first-child {
+    font-size: 4vw;
+    font-weight : 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(205, 202, 202);
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-color: aqua;
+    -webkit-background-clip : text;  */
+}
+.page1 .left h1:nth-child(2){
+    font-size: 6vw;
+    font-weight : 900;
+    text-transform: uppercase;
+    letter-spacing: 1vh;
+}
+.page1 .content .left .l-btn-box{
+    height : 3.2vw ;
+    width : 13vw;
+}
+.page1 .content .left .l-btn-box button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width : 100%;
+    font-size: 2vh;
+    font-weight: 600;
+    background-color: chartreuse;
+    border : none;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 80% 100%, 0% 100%);
+}
+.page1 .content .left .l-btn-box button:hover{
+    background-color:rgb(103, 202, 3) ;
+}
+.page1 .content .right{
+    height : 100%;
+    width : 40%;
+    z-index: 2;
+    display: flex;
+    align-items: end;
+    position: absolute;
+    right : 12%;
+}
+.page1 .content .right img{
+    height : 70%;
+}
+
+
+
+/********/
+nav i{
+    display: none;
+}
+/***************************media**************/
+@media (max-width : 600px){
+    nav{
+        justify-content: space-between;
+        padding-right: 2vw;
+    }
+    nav i{
+        display: initial;
+        font-size: 3vh;
+    }
+    nav .nav-middle{
+        display: none;
+    }
+    nav .register{
+        display: none;
+    }
+
+    /*******page1 ********/
+    .page1 {
+        height : max-content;
+    }
+    .page1 .content{
+        flex-direction: column;
+        z-index: 2;
+    }
+
+    .page1 .content .left{
+          width : 100%;
+          height : 40vh;
+          margin-top : 18vh;
+          padding : none;
+          gap : 3vh
+    }
+    
+    .page1 .left h1:first-child{
+        font-size: 8vw;
+    }
+    .page1 .left h1:nth-child(2){
+        font-size: 9vw;
+    }
+
+    .page1 .content .left .l-btn-box{
+        height : 6vh ;
+        width :  20vh;
+    }
+    .page1 .content .left p{
+         font-size: 2vh;
+         line-height: 3vh;
+    }
+
+    .page1 .content .right{
+        width : 100%;
+        height : 60vh;
+        position: initial;
+        justify-content: center;
+    }
+}
